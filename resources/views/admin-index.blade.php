@@ -9,7 +9,7 @@
 		<span class="new">New Section</span>
 		<span class="input" style="display:none;">
 			<i class="fa fa-edit float-right" onclick="editQA(this);"></i>
-			<i class="fa fa-trash float-right" onclick="deleteQA(this);"></i>		
+			<i class="fa fa-trash float-right" onclick="deleteQA(this);"></i>
 
 		<form method="post" action="faq/create-section-faq" data-id="" onsubmit="return false;">
 			<label>Nom de la section : </label><input name="name" style="float:left;width:100%;" type="text" value="" /><br/>
@@ -18,7 +18,7 @@
 			<button type="button" class="btn btn-warning btn-save" onclick="closeSection(this);">Cancel</button>
 		</form>
 		<div class="clearfix"></div>
-		</span>		
+		</span>
 	</li>
 	<li class="draggable ui-state-highlight question_answer">
 		<i class="fa fa-arrows handle float-left"></i>
@@ -65,11 +65,11 @@
 		</form>
 		<h4 class="preview_section" id="preview_section{{ $section->id }}">{{ $section->name }}</h4>
 		<div class="clearfix"></div>
-		</span>		
+		</span>
 	</li>
 	@foreach($section->question_answers as $question_answer)
 	<li class="question_answer">
-		
+
 		<span class="preview"></span>
 		<span class="form">
 			<span class="input">
@@ -82,7 +82,7 @@
 				<button type="button" class="btn btn-primary btn-save" onclick="saveQA(this);">Save</button>
 				<button type="button" class="btn btn-warning btn-save" onclick="closeQA(this);">Cancel</button>
 			</form>
-			<dl class="preview_qa" id="preview_qa{{ $question_answer->id }}"> 
+			<dl class="preview_qa" id="preview_qa{{ $question_answer->id }}">
 				<i class="fa fa-arrows handle float-left"></i>
 				<dt class="preview_question">{{ $question_answer->question }}</dt>
 				<dd class="preview_answer">{!! $question_answer->answer !!}</dd>
@@ -92,7 +92,7 @@
 		</span>
 	</li>
 	@endforeach
-@endforeach	
+@endforeach
 </ul>
 
 @stop
@@ -133,7 +133,7 @@ textarea {
 </style>
 @stop
 @section('scripts')
-{!! Html::script('js/jquery-ui.js') !!}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script>
 	var index_qa = 0;
 	var answers_hidden = true;
@@ -221,7 +221,7 @@ textarea {
 		} else {
 			$("#preview_section"+section_id).show();
 	      	form.hide();
-	      	$(element).closest('li').find(".preview_section").show();			
+	      	$(element).closest('li').find(".preview_section").show();
 		}
 	}
 	function closeQA(element){
@@ -355,7 +355,7 @@ textarea {
   		$('.preview_answer').hide();
   	} else {
   		$('.preview_answer').show();
-  	}    
-  } );  
+  	}
+  } );
   </script>
 @stop
