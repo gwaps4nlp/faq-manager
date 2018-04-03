@@ -55,13 +55,13 @@
 
 @section('css')
 <style>
-dt {
+#faq dt {
     font-size: 120%;
 }
-dt, dd {
+#faq dt, #faq dd {
     margin: 16px 0;
 }
-dd, ol, ul {
+#faq dd, #faq ol, #faq ul {
     margin: 0;
     padding-left: 40px;
 }
