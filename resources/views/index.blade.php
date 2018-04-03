@@ -26,9 +26,9 @@
 		<ul>
 		@foreach($section->question_answers as $question_answer)
 		  <li><a href="#{{ $question_answer->slug }}" class="scroll">{{ $question_answer->question }}</a></li>
-		@endforeach	
+		@endforeach
 		</ul>
-	@endforeach	
+	@endforeach
 
 	@foreach($sections as $section)
 		<h2 id="{!! $section->slug !!}">{{ $section->name }}</h2>
@@ -41,7 +41,7 @@
 		  <dt id="{{ $question_answer->slug }}">{{ $question_answer->question }}</dt>
 		  <dd id="answer_{{ $question_answer->id }}">{!! $question_answer->answer !!}</dd>
 		  @if(Auth::check() && Auth::user()->isAdmin())
-		  	<a href="#" class="edit-question" data-qa-id="{{ $question_answer->id }}">Edit</a> - 
+		  	<a href="#" class="edit-question" data-qa-id="{{ $question_answer->id }}">Edit</a> -
 		  @endif
 		  	<span style="margin-right:20px;position:relative;" id="discussion_{{ $question_answer->id }}"><a style="position:relative;" data-id="{{ $question_answer->id }}" href="#" data-type="{{ get_class($question_answer) }}" class="message-button">Commentaires ({{ $nb_messages }})</span></a></span>
 		  	<div id="thread_{{ $question_answer->id }}" style="display:none;" class="thread"></div>
@@ -90,7 +90,7 @@ dd, ol, ul {
 #faq ul.messages li {
 	list-style-type: none;
 }
-</style>	
+</style>
 @stop
 
 
@@ -99,7 +99,7 @@ dd, ol, ul {
 <script>
 
 @if(true)
-	// $('.message-button[data-id=27]').trigger('click');	
+	// $('.message-button[data-id=27]').trigger('click');
 @endif
 </script>
 
@@ -108,6 +108,7 @@ dd, ol, ul {
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script>
 var route_prefix = "{{ url(config('lfm.prefix')) }}";
 var ckeditor_instance = 0;
@@ -137,8 +138,8 @@ $(".edit-question").click(function(event){
 			eval(editor);
 	      	$(textarea).remove();
 	      	$(button).remove();
-		});    	
-    	
+		});
+
     });
 });
 </script>
@@ -147,7 +148,7 @@ $(".edit-question").click(function(event){
 $(document).ready(function() {
 
 	var parser = document.createElement('a');
-	parser.href = window.location.href;	
+	parser.href = window.location.href;
 	var trgt = parser.hash;
 
 	if(trgt){
@@ -163,7 +164,7 @@ $(document).on('click','#question-faq', function(){
     $('#submitReport').attr("disabled","disabled");
     $('body').append($('#modalReport'));
     $('#modalReport').modal("show");
-    
+
 });
 
 $(".scroll").click(function(event){
@@ -185,7 +186,7 @@ $( function() {
 		} else {
 			$('#nav-left').css({position:'relative', top:'0px'});
 		}
-	  	
+
 	});
 
 });
