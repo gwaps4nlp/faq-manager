@@ -6,7 +6,7 @@ use Gwaps4nlp\FaqManager\Models\SectionFaq;
 use Gwaps4nlp\FaqManager\Models\QuestionAnswer;
 use Gwaps4nlp\FaqManager\Requests\CreateQuestionAnswer;
 use Gwaps4nlp\FaqManager\Requests\CreateSectionFaq;
-use Gwaps4nlp\Models\Language;
+use Gwaps4nlp\Core\Models\Language;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Response,App;

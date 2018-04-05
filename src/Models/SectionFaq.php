@@ -3,7 +3,7 @@
 namespace Gwaps4nlp\FaqManager\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Gwaps4nlp\Scopes\LanguageScope;
+use Gwaps4nlp\Core\Scopes\LanguageScope;
 
 class SectionFaq extends Model
 {
